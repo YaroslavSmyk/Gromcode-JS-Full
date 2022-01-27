@@ -13,7 +13,9 @@ prettier/prettier
 prettier/prettier
 prettier/prettier
 no-return-assign
+eqeqeq
 prettier/prettier
 prettier/prettier
 prettier/prettier
+no-undef
 prettier/prettier

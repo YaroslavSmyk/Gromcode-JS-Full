@@ -1,0 +1,8 @@
+prettier/prettier
+prettier/prettier
+no-var
+prettier/prettier
+prettier/prettier
+no-return-assign
+eqeqeq
+prettier/prettier

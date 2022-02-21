@@ -1,5 +1,12 @@
 const pickProps = (obj, props) => {
-  const result = pickProps.obj;
+  let result = {};
+  for (let key in obj) {
+    if (props.includes(key)) {
+      result[key] = obj[key];
+    }
+  }
+  console.log(result);
+  return result;
 };
 
 // examples

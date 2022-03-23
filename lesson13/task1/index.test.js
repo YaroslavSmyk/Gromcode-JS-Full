@@ -6,12 +6,10 @@ it('18 это вам не 17', () => {
   expect(18).not.toEqual(17);
 });
 
-const getEventNumbers = numbers => 
-  numbers.filter(num => (num % 2 ==0))
+const getEventNumbers = numbers => numbers.filter(num => num % 2 == 0);
 
+it('should get only even numbers from array', () => {
+  const result = getEventNumbers([1, 2, 3, 4]);
 
-  it ('should get only even numbers from array', () => {
-    const result = getEventNumbers([1, 2, 3, 4]);
-
-    expect(result).toEqual([2,4]);
-  });
+  expect(result).toEqual([2, 4]);
+});

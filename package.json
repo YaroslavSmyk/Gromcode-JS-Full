@@ -1,7 +1,6 @@
 {
   "name": "gromcode-js-full",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "acorn": "^8.7.0",
@@ -159,5 +158,10 @@
   "bugs": {
     "url": "https://github.com/YaroslavSmyk/Gromcode-JS-Full/issues"
   },
-  "homepage": "https://github.com/YaroslavSmyk/Gromcode-JS-Full#readme"
+  "homepage": "https://github.com/YaroslavSmyk/Gromcode-JS-Full#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11"
+  },
+  "description": ""
 }

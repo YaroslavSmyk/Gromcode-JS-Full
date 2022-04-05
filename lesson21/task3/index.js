@@ -7,8 +7,13 @@ const getItemsList = () => {
 };
 
 const getItemArray = () => {
-  const eleventsArray = Array.from(document.querySelectorAll('.tool'));
-  console.dir(eleventsArray);
-return eleventsArray
+  const eleventsArray = document.querySelectorAll('.tool');
+  const arr = Array.from(eleventsArray);
+  console.dir(arr);
+
+return arr;
 };
 
+getItemsList();
+
+getItemArray();

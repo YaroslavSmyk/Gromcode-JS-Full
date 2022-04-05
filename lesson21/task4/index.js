@@ -1,4 +1,4 @@
-export { getTitle, getDescription, getPlant, getGoal };
+export { getTitle, getDescription, getPlans, getGoal };
 
 const getTitle = () => {
   const text = document.querySelector('.title');
@@ -12,7 +12,7 @@ const getDescription = () => {
   return inner.innerText;
 };
 
-const getPlant = () => {
+const getPlans = () => {
   const plans = document.querySelector('.plans');
   console.dir(plans);
   return plans.innerHTML;

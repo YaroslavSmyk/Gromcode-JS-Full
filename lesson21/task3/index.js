@@ -13,7 +13,3 @@ const getItemArray = () => {
 
 return arr;
 };
-
-getItemsList();
-
-getItemArray();

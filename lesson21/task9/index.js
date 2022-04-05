@@ -15,5 +15,5 @@ export const finishList = () => {
 
   const special = document.querySelector('.special');
   special.before(li4);
-  special.after(li8);
+  special.after(li6);
 };

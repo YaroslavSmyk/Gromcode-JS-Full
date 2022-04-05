@@ -15,11 +15,11 @@ const getDescription = () => {
 const getPlant = () => {
   const plans = document.querySelector('.plans');
   console.dir(plans);
-  return plans.outherHTML;
+  return plans.innerHTML;
 };
 
 const getGoal = () => {
   const goal = document.querySelector('.goal');
   console.dir(goal);
-  return goal.textContent;
+  return goal.outerHTML;
 };

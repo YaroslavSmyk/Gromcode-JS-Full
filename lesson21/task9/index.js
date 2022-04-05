@@ -8,12 +8,12 @@ export const finishList = () => {
   const li8 = document.createElement('li');
   li8.textContent = 8;
 
-  const ul = document.querySelector('list');
+  const ul = document.querySelector('.list');
 
   ul.prepend(li1);
   ul.append(li8);
 
-  const special = document.querySelector('special');
+  const special = document.querySelector('.special');
   special.before(li4);
   special.after(li8);
 };

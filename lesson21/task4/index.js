@@ -15,7 +15,7 @@ const getDescription = () => {
 const getPlant = () => {
   const plans = document.querySelector('.plans');
   console.dir(plans);
-  return plans.innerHTML;
+  return plans.outherHTML;
 };
 
 const getGoal = () => {

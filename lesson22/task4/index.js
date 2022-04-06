@@ -4,4 +4,4 @@ const create = () => {
   console.log(task.checked)
 };
 
-task.addEventListener('change', create, true);
+task.addEventListener('change', create);

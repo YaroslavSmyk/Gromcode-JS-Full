@@ -1,4 +1,9 @@
-export const setButton = buttonText => {
-  const button = document.querySelector('body');
-  button.innerHTML = `<button>${buttonText}</button>`;
-};
+const single = document.querySelector('.single-use-btn');
+
+const cons = () => {
+  console.log('clicked')
+  single.removeEventListener('click', cons)
+}
+
+single.addEventListener('click', cons)
+

@@ -1,4 +1,6 @@
-export const clearList = () => {
-  const clear = document.querySelector('.categories');
-  clear.innerHTML = '';
-}
+const button = document.querySelectorAll('.btn');
+
+const handelClick = event => {
+  console.log(event.target.textContent);
+};
+button.forEach(ell => ell.addEventListener('click', handelClick));

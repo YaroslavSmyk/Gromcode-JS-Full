@@ -1,25 +1,7 @@
-export { getTitle, getDescription, getPlans, getGoal };
+const task = document.querySelector('.task-status');
 
-const getTitle = () => {
-  const text = document.querySelector('.title');
-  console.dir(text);
-  return text.textContent;
+const create = () => {
+  console.log(task.checked)
 };
 
-const getDescription = () => {
-  const inner = document.querySelector('.about');
-  console.dir(inner);
-  return inner.innerText;
-};
-
-const getPlans = () => {
-  const plans = document.querySelector('.plans');
-  console.dir(plans);
-  return plans.innerHTML;
-};
-
-const getGoal = () => {
-  const goal = document.querySelector('.goal');
-  console.dir(goal);
-  return goal.outerHTML;
-};
+task.addEventListener('change', create, true);

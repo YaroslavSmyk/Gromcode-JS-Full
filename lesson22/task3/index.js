@@ -1,15 +1,7 @@
-export { getItemsList, getItemsArray };
+const input = document.querySelector('.text-input');
 
-const getItemsList = () => {
-  const elementsList = document.querySelectorAll('.technology');
-  console.dir(elementsList);
-  return elementsList;
+const create = () => {
+  console.log(input.value)
 };
 
-const getItemsArray = () => {
-  const eleventsArray = document.querySelectorAll('.tool');
-  const arr = Array.from(eleventsArray);
-  console.dir(arr);
-
-  return arr;
-};
+input.addEventListener('change', create);

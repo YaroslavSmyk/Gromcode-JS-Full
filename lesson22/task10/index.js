@@ -1,10 +1,6 @@
-export const finishForm = () => {
-  const form = document.querySelector('.login-form');
-  const input = document.createElement('input');
-  form.prepend(input)
-  input.setAttribute('type', 'text');
-  input.setAttribute('name', 'login');
-  const inp = document.querySelector('input[name = "password"]');
-  inp.setAttribute('type', 'password');
+const page = document.querySelectorAll('.pagination__page');
 
-}
+const handleClick = event => {
+  console.log(event.target.dataset.pageNumber);
+};
+page.forEach(ell => ell.addEventListener('click', handleClick));

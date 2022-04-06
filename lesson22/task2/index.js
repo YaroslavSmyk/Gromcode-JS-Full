@@ -1,5 +1,7 @@
-const creat = () => {
-  const res = document.querySelector('.create-btn');
-  res.addEventListener('click', null);
+const button = document.querySelector('.create-btn');
+
+const create = () => {
   alert('done');
 };
+
+button.addEventListener('click', create);

@@ -45,8 +45,8 @@ const sectorsString = generateNumbersRange(1, 3)
 };
 
 const onSeatSelect = event => {
-  const isSeat = event.target.classList.contains('sector__seat')
-    if(!isSeat) {
+  const isSeat = event.target.classList.contains('sector__seat');
+    if (!isSeat) {
       return;
     }
 
@@ -56,9 +56,9 @@ const sectorNumber = event.target.closest('.sector').dataset.sectorNumber
 
 const selectedSeatElem = document.querySelector('.board__selected-seat');
 
-selectedSeatElem.textContent = ` S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`
-}
+selectedSeatElem.textContent = `S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`;
+};
 
-arenaElem.addEventListener('click', onSeatSelect)
+arenaElem.addEventListener('click', onSeatSelect);
 
 renderArena();

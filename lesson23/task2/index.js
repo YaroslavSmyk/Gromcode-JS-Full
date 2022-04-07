@@ -14,7 +14,7 @@ generateNumbersRange(1, 10)
      class="sector__seat"
      data-seat-number="${seatNumber}"
      ></div>
-     `).join('');
+     `,).join('');
 
 const getSectorLines = () => {
   const seatString = getLineSeats();
@@ -25,7 +25,7 @@ const getSectorLines = () => {
     class="sector__line"
     data-line-number="${lineNumber}"
     >${seatString}</div>
-    `).join('');
+    `,).join('');
 };
 
 const arenaElem = document.querySelector('.arena');
@@ -39,7 +39,7 @@ const sectorsString = generateNumbersRange(1, 3)
     class="sector"
     data-sector-number="${sectorNumber}"
     >${linesString}</div>
-    `).join('');
+    `,).join('');
     
     arenaElem.innerHTML = sectorsString;
 };

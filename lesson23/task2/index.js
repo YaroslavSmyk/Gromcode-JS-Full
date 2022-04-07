@@ -1,7 +1,45 @@
-const button = document.querySelector('.create-btn');
+const generateNumbersRange = (from, to) => {
+  const result = [];
 
-const create = () => {
-  alert('done');
+  for(let i = from; i <= to; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+const getLineSeats = () => {
+  return generateNumbersRange(1, 10)
+   .map(seatNumber => `
+ <div 
+     class="sector__seat"
+     data-seat-number="${seatNumber}"
+     ></div>
+     `).join('');
+ };
+
+const getSectorLines = () => {
+  const seatString = getLineSeats();
+
+ return generateNumbersRange(1, 10)
+  .map(lineNumber => `
+<div 
+    class="sector__line"
+    data-line-number="${lineNumber}"
+    >${seatString()}</div>
+    `).join('');
 };
 
-button.addEventListener('click', create);
+
+const renderArena = () => {
+  const arenaElem = document.querySelector('.arena');
+  const linesString = getSectorLines();
+const srctorsString = generateNumbersRange(1, 3)
+.map(sectorNumber => `
+<div 
+    class="sector"
+    data-sector-number="${sectorNumber}"
+    >${linesString()}</div>
+    `).join('');
+    
+    arenaElem.innerHTML = srctorsString;
+}

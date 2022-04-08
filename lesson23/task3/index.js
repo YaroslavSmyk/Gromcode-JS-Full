@@ -1,6 +1,7 @@
 const listElem = document.querySelector('.list');
-const input = document.querySelector('.task-input');
 const button = document.querySelector('.create-task-btn');
+const input = document.querySelector('.task-input');
+
 const tasks = [
   { text: 'Buy milk', done: true, id: Math.random() },
   { text: 'Pick up Tom from airport', done: false, id: Math.random() },
@@ -23,20 +24,19 @@ const pushButton = () => {
 
 button.addEventListener('click', pushButton);
 
-const renderTasks = tasksList => {
+function renderTasks(tasksList) {
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done }) => {
+    .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
       listItemElem.classList.add('list__item');
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.checked = done;
-      checkbox.classList.add('list__item-checkbox');
+
       if (done) {
         listItemElem.classList.add('list__item_done');
       }
-
       checkbox.dataset.id = id;
       const completeTask = event => {
         const isCheckbox = event.target.classList.contains('.list__item-checkbox');
@@ -54,14 +54,31 @@ const renderTasks = tasksList => {
 
       listElem.addEventListener('click', completeTask);
       checkbox.classList.add('list__item-checkbox');
+
       listItemElem.append(checkbox, text);
 
       return listItemElem;
     });
-
   listElem.innerHTML = '';
 
   listElem.append(...tasksElems);
-};
+}
 
 renderTasks(tasks);
+
+
+
+// А) при нажатии на галочку(чекбокс) должино поменятся done в объекте и наоборот
+
+      
+// найти чекбокс? при галочке включить listItemElem.append(checkbox, text);
+
+
+
+// Б) при клике на Create создается новая запись в объекте:
+//   1) добавить текст из инпута
+//   2) поле пустое? да/ не довавляем в объект
+//   3) запись добавлена? да/ очистить инпут
+
+
+// В) задача done? да/задачу в низ списка.

@@ -6,9 +6,25 @@ const tasks = [
   { text: 'Buy meat', done: true, id: Math.random() },
 ];
 
+
+
 const listElem = document.querySelector('.list');
 const input = document.querySelector('.task-input');
 const button = document.querySelector('.create-task-btn');
+
+const pushButton = () => {
+  if (input.value === '') {
+    return;
+  }
+  tasks.push({ text: input.value, done: false, id: Math.random() });
+  console.log(tasks);
+
+  input.value = '';
+
+  renderTasks(tasks);
+};
+
+button.addEventListener('click', pushButton);
 
 const renderTasks = tasksList => {
   const tasksElems = tasksList
@@ -69,16 +85,3 @@ renderTasks(tasks);
 
 
 // В) задача done? да/задачу в низ списка.
-const pushButton = () => {
-  if (input.value === '') {
-    return;
-  }
-  tasks.push({ text: input.value, done: false, id: Math.random() });
-  console.log(tasks);
-
-  input.value = '';
-
-  renderTasks(tasks);
-};
-
-button.addEventListener('click', pushButton);

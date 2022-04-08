@@ -1,3 +1,6 @@
+const listElem = document.querySelector('.list');
+const input = document.querySelector('.task-input');
+const button = document.querySelector('.create-task-btn');
 const tasks = [
   { text: 'Buy milk', done: true, id: Math.random() },
   { text: 'Pick up Tom from airport', done: false, id: Math.random() },
@@ -5,12 +8,6 @@ const tasks = [
   { text: 'Visit doctor', done: false, id: Math.random() },
   { text: 'Buy meat', done: true, id: Math.random() },
 ];
-
-
-
-const listElem = document.querySelector('.list');
-const input = document.querySelector('.task-input');
-const button = document.querySelector('.create-task-btn');
 
 const pushButton = () => {
   if (input.value === '') {
@@ -62,26 +59,9 @@ const renderTasks = tasksList => {
       return listItemElem;
     });
 
-    listElem.innerHTML = '';
+  listElem.innerHTML = '';
 
   listElem.append(...tasksElems);
 };
 
 renderTasks(tasks);
-
-
-
-// А) при нажатии на галочку(чекбокс) должино поменятся done в объекте и наоборот
-
-      
-// найти чекбокс? при галочке включить listItemElem.append(checkbox, text);
-
-
-
-// Б) при клике на Create создается новая запись в объекте:
-//   1) добавить текст из инпута
-//   2) поле пустое? да/ не довавляем в объект
-//   3) запись добавлена? да/ очистить инпут
-
-
-// В) задача done? да/задачу в низ списка.

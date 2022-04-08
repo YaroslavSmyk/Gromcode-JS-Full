@@ -1,30 +1,18 @@
 const listElem = document.querySelector('.list');
-const button = document.querySelector('.create-task-btn');
-const input = document.querySelector('.task-input');
 
 const tasks = [
-  { text: 'Buy milk', done: true, id: Math.random() },
+  { text: 'Buy milk', done: false, id: Math.random() },
   { text: 'Pick up Tom from airport', done: false, id: Math.random() },
   { text: 'Visit party', done: false, id: Math.random() },
-  { text: 'Visit doctor', done: false, id: Math.random() },
+  { text: 'Visit doctor', done: true, id: Math.random() },
   { text: 'Buy meat', done: true, id: Math.random() },
 ];
 
-const pushButton = () => {
-  if (input.value === '') {
-    return;
-  }
-  tasks.push({ text: input.value, done: false, id: Math.random() });
-  console.log(tasks);
+const button = document.querySelector('.create-task-btn');
+const input = document.querySelector('.task-input');
+const todoList = document.querySelector('ul');
 
-  input.value = '';
-
-  renderTasks(tasks);
-};
-
-button.addEventListener('click', pushButton);
-
-function renderTasks(tasksList) {
+const renderTasks = tasksList => {
   const tasksElems = tasksList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done, id }) => {
@@ -33,36 +21,42 @@ function renderTasks(tasksList) {
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.checked = done;
-
+      checkbox.classList.add('list__item-checkbox');
+      checkbox.dataset.id = id;
       if (done) {
         listItemElem.classList.add('list__item_done');
       }
-      checkbox.dataset.id = id;
-      const completeTask = event => {
-        const isCheckbox = event.target.classList.contains('.list__item-checkbox');
-        if (!isCheckbox) {
-          return;
-        }
-        const idChecked = tasks.forEach(elem => {
-          if (elem.id === event.target.id) {
-            listItemElem.classList.add('list__item_done');
-          } else {
-            listItemElem.classList.remove('list__item_done');
-          }
-        });
-      };
-
-      listElem.addEventListener('click', completeTask);
-      checkbox.classList.add('list__item-checkbox');
-
       listItemElem.append(checkbox, text);
 
       return listItemElem;
     });
   listElem.innerHTML = '';
-
   listElem.append(...tasksElems);
-}
+};
+
+const taskComplete = event => {
+  const isId = event.target.dataset.id;
+  console.log(isId);
+
+  const choseTask = tasks.find(elem => elem.id === +isId);
+
+  choseTask.done = !choseTask.done;
+
+  renderTasks(tasks);
+};
+
+todoList.addEventListener('click', taskComplete);
+const createElem = () => {
+  if (input.value === '') {
+    return;
+  }
+
+  tasks.push({ text: input.value, done: false, id: Math.random() });
+  renderTasks(tasks);
+  input.value = '';
+};
+
+button.addEventListener('click', createElem);
 
 renderTasks(tasks);
 

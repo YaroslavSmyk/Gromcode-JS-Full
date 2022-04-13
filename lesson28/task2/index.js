@@ -1,4 +1,4 @@
-// export { markFavorites };
+export { markFavorites };
 
 const favorites = ['id-2'];
 const tree = {

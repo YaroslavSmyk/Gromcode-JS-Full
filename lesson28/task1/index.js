@@ -1,3 +1,4 @@
+export { calc }
 const calc = initValue => {
   let result = initValue;
 

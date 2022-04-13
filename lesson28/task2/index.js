@@ -1,4 +1,4 @@
-export { markFavorites };
+// export { markFavorites };
 
 const favorites = ['id-2'];
 const tree = {
@@ -13,11 +13,11 @@ const tree = {
   ],
 };
 const markFavorites = (tree, favorites) => {
-  const isFavorites = favorites.includes(tree.id);
+  const isFavorite = favorites.includes(tree.id);
 
   return {
     ...tree,
-    isFavorites,
+    isFavorite,
     nodes: tree.nodes.map(childNode => markFavorites(childNode, favorites)),
   };
 };

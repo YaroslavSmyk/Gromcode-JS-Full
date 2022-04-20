@@ -41,16 +41,16 @@ export const shmoment = startValue => {
   return finishObj;
 };
 
-const debug = shmoment(new Date(2022, 3, 13, 20, 31, 17))
-  .add('years', 5)
-  .subtract('years', 3)
-  .add('years', 10)
-  .result();
-const debug2 = shmoment(new Date(2021, 5, 7, 17, 17, 17))
-  .add('months', 1)
-  .subtract('milliseconds', 5000)
-  .result();
-const check3 = shmoment(new Date(2021, 5, 7, 17, 17, 17)).add('days', 5).result();
-const check4 = shmoment(new Date(2021, 5, 7, 17, 17, 17)).add('hours', 5).result();
-console.log(debug);
-console.log(debug2);
+// const debug = shmoment(new Date(2022, 3, 13, 20, 31, 17))
+//   .add('years', 5)
+//   .subtract('years', 3)
+//   .add('years', 10)
+//   .result();
+// const debug2 = shmoment(new Date(2021, 5, 7, 17, 17, 17))
+//   .add('months', 1)
+//   .subtract('milliseconds', 5000)
+//   .result();
+// const check3 = shmoment(new Date(2021, 5, 7, 17, 17, 17)).add('days', 5).result();
+// const check4 = shmoment(new Date(2021, 5, 7, 17, 17, 17)).add('hours', 5).result();
+// console.log(debug);
+// console.log(debug2);

@@ -6,12 +6,11 @@ const defaultAvatar = 'https://avatars.githubusercontent.com/u/2?v=4';
 userAvatarElem.src = defaultAvatar;
 
 const fetchUserData = userName => {
-  return fetch(`https://api.github.com/users/${userName}`)
-  .then(response => response.json());
+  return fetch(`https://api.github.com/users/${userName}`).then(response => response.json());
 };
 
 const renderUserData = userData => {
-  console.log(userData)
+  console.log(userData);
   const { avatar_url, name, location } = userData;
   userAvatarElem.src = avatar_url;
   userNameElem.textContent = name;
